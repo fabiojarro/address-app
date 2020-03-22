@@ -43,8 +43,9 @@ public class AddressController {
         return addressService.save(address);
     }
     
-    @PutMapping
-    public Address updateAdrress(@Valid @RequestBody Address address){
+    @PutMapping("/{id}")
+    public Address updateAdrress(@Valid @RequestBody Address address, @PathVariable("id") Integer id){
+        address.setId(id);
         return addressService.save(address);
     }
     
